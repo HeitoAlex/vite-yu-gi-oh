@@ -2,13 +2,19 @@
 import SingleCard from './SingleCard.vue';
 
 export default {
+    components:{
+        SingleCard
+    },
     data(){
         return{
             
         }
     },
-    components:{
-        SingleCard
+    props:{
+        card:{
+            type: Array;
+            required: true
+        }
     }
 }
 </script>
