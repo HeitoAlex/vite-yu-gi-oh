@@ -14,12 +14,12 @@ export default {
         }
     },
     methods:{
-        getCard(){
+        getCards(){
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
             .then((response) => {
                 // handle success
                 console.log(response.data.data);
-                this.card = response.data.data
+                this.cards = response.data.data
             })
             .catch(function (error) {
                 // handle error
@@ -31,16 +31,23 @@ export default {
         }
     },
     created(){
-        this.getCard();
+        this.getCards();
     }
 }
 </script>
 
 <template>
-    <AppSearch/>
-    <CardList :card="card"/>
+    <main>
+        <AppSearch/>
+        <CardList :cards="cards"/>
+    </main>
 </template>
 
 <style lang="scss" scoped>
+
+main{
+    background-color: #C58635;
+    height: 100vh;
+}
 
 </style>

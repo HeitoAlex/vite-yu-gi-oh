@@ -11,8 +11,8 @@ export default {
         }
     },
     props:{
-        card:{
-            type: Array;
+        cards:{
+            type: Array,
             required: true
         }
     }
@@ -20,7 +20,19 @@ export default {
 </script>
 
 <template>
-    <SingleCard/>
+    <section class="cards-list container">
+        <div class="row">
+            <h2 class="col-12">
+                found {{ cards.lenght }} cards
+            </h2>
+            <div class="col-12">
+                <div>
+                    <SingleCard v-for="card in cards" :key="card.index"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </template>
 
 <style scoped>
