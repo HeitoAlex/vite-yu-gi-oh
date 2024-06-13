@@ -23,7 +23,7 @@ export default {
     <section class="cards-list container">
         <div class="row">
             <h2 class="col-12">
-                found {{ cards.lenght }} cards
+                found {{ cards.length }} cards
             </h2>
             <div class="col-12">
                 <div>
