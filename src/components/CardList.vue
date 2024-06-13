@@ -20,21 +20,40 @@ export default {
 </script>
 
 <template>
-    <section class="cards-list container">
-        <div class="row">
-            <h2 class="col-12">
-                found {{ cards.length }} cards
+    <section>
+        <div id="founded">
+            <h2>
+                Founded {{ cards.length }} cards
             </h2>
-            <div class="col-12">
-                <div>
-                    <SingleCard v-for="card in cards" :key="card.index"/>
-                </div>
-            </div>
+        </div>
+        <div id="card-list">
+                <SingleCard v-for="card in cards" :key="card.id" :card="card"/>
         </div>
     </section>
-    
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+section{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+}
+
+#founded{
+    width: 100%;
+    color: white;
+    background-color: #212529;
+    padding: .5rem;
+}
+
+#card-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
 
 </style>

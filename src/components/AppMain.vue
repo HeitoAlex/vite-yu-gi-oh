@@ -48,6 +48,7 @@ export default {
 main{
     background-color: #C58635;
     height: 100vh;
+    padding: 2rem;
 }
 
 </style>
