@@ -41,7 +41,7 @@ export default {
 
 <template>
     <main>
-        <AppSearch @searched="searchCard"/>
+        <AppSearch/>
         <CardList :cards="cards"/>
     </main>
 </template>
