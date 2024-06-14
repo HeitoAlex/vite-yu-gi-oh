@@ -28,6 +28,9 @@ export default {
             .finally(function () {
                 // always executed
             });
+        },
+        searchCard(searchedCard){
+            this.getCards(searchedCard)
         }
     },
     created(){
@@ -38,7 +41,7 @@ export default {
 
 <template>
     <main>
-        <AppSearch/>
+        <AppSearch @searched="searchCard"/>
         <CardList :cards="cards"/>
     </main>
 </template>
