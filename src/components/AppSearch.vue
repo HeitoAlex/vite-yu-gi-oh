@@ -42,5 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 
-
+div.select-container{
+    margin-bottom: 2rem;
+}
 </style>
