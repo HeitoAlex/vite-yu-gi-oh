@@ -29,8 +29,9 @@ export default {
                 // always executed
             });
         },
-        searchCard(searchedCard){
-            this.getCards(searchedCard)
+        selectedArchetype(archetype){
+            console.log(archetype)
+            this.getCards(archetype)
         }
     },
     created(){
@@ -41,7 +42,7 @@ export default {
 
 <template>
     <main>
-        <AppSearch/>
+        <AppSearch @selected="selectedArchetype"/>
         <CardList :cards="cards"/>
     </main>
 </template>

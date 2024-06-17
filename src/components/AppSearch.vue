@@ -48,7 +48,7 @@ export default {
 <template>
     <div class="select-container">
         <select>
-            <option v-for="archetype in categories" @click="getCharacterByArchetype(archetype.archetype_name)">
+            <option v-for="archetype in categories" @click="$emit('selected'), getCharacterByArchetype(archetype.archetype_name)">
                 {{ archetype.archetype_name }}
             </option>
         </select>
