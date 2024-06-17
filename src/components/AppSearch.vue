@@ -22,21 +22,6 @@ export default {
             .finally(function () {
                 // always executed
             });
-        },
-        getCharacterByArchetype(archetypeName){
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + archetypeName)
-            .then((response) => {
-                // handle success
-                console.log(response);
-                
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .finally(function () {
-                // always executed
-            });
         }
     },
     created(){
@@ -48,7 +33,7 @@ export default {
 <template>
     <div class="select-container">
         <select>
-            <option v-for="archetype in categories" @click="$emit('selected'), getCharacterByArchetype(archetype.archetype_name)">
+            <option v-for="archetype in categories" @click="$emit('selected', archetype.archetype_name)">
                 {{ archetype.archetype_name }}
             </option>
         </select>

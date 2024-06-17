@@ -11,11 +11,20 @@ export default {
     data(){
         return{
             cards: [],
+            
         }
     },
     methods:{
-        getCards(){
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        getCards(archetypeName){
+            let urlAPI = ''
+
+            if (typeof archetype === 'undefined') {
+                let urlAPI = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0'
+            } else {
+                let urlAPI = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0&archetype=' + archetypeName
+            }
+
+            axios.get(urlAPI)
             .then((response) => {
                 // handle success
                 console.log(response.data.data);
